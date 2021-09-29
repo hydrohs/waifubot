@@ -78,25 +78,27 @@ async def eightball(ctx):
     response = random.choice(answers)
     await ctx.send(response)
 
-@bot.command(name='shiningfinga', category='G Gundam Quotes')
-async def shiningfinga(ctx):
-    await ctx.send('俺のこの手が光って唸る！お前を倒せと輝き叫ぶ！必殺、**シャイニングフィンガー！**')
+class Gundam(commands.Cog, name='G Gundam Quotes'):
 
-@bot.command(name='shiningfinger')
-async def shiningfinger(ctx):
-    await ctx.send('This hand of mine glows with an awesome power. It’s burning grip tells me to defeat you! Now here I go, **Shining Finger!**')
+    @bot.command(name='shiningfinga', category='G Gundam Quotes')
+    async def shiningfinga(ctx):
+        await ctx.send('俺のこの手が光って唸る！お前を倒せと輝き叫ぶ！必殺、**シャイニングフィンガー！**')
 
-@bot.command(name='godfinga')
-async def godfinger(ctx):
-    await ctx.send('俺のこの手が真っ赤に燃える！！勝利を掴めて轟叫ぶ！！**爆熱ゴッドフィンガー！！！**')
+    @bot.command(name='shiningfinger')
+    async def shiningfinger(ctx):
+        await ctx.send('This hand of mine glows with an awesome power. It’s burning grip tells me to defeat you! Now here I go, **Shining Finger!**')
 
-@bot.command(name='burningfinger')
-async def burningfinger(ctx):
-    await ctx.send('This hand of mine is burning red! Its loud roar tells me to grasp victory! **Erupting Burning Finger!!!**')
+    @bot.command(name='godfinga')
+    async def godfinger(ctx):
+        await ctx.send('俺のこの手が真っ赤に燃える！！勝利を掴めて轟叫ぶ！！**爆熱ゴッドフィンガー！！！**')
 
-@bot.command(name='burn')
-async def burn(ctx):
-    await ctx.send('Hah! You better have a Burn Heal!')
+    @bot.command(name='burningfinger')
+    async def burningfinger(ctx):
+        await ctx.send('This hand of mine is burning red! Its loud roar tells me to grasp victory! **Erupting Burning Finger!!!**')
+
+    @bot.command(name='burn')
+    async def burn(ctx):
+        await ctx.send('Hah! You better have a Burn Heal!')
 
 @bot.event
 async def on_message(message):
@@ -114,6 +116,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 try:
+    bot.add_cog(Gundam(bot))
     bot.run(TOKEN)
 except KeyboardInterrupt:
     bot.close()
