@@ -20,7 +20,7 @@ async def on_ready():
         members = '\n - ' .join([member.name for member in guild.members])
         print(f'{members}')
 
-@bot.command(name='tsundere')
+@bot.command(name='tsundere', help='Responds with a random tsundere quote')
 async def tsundere(ctx):
     quotes = [
         'I-it\'s not like I\'m responding because I like you, b-b-baka!',
@@ -37,7 +37,7 @@ async def tsundere(ctx):
     response = random.choice(quotes)
     await ctx.send(response)
 
-@bot.command(name='yandere')
+@bot.command(name='yandere', help='Responds with a random yandere quote')
 async def yandere(ctx):
     quotes = [
         'I\'ll cut off your hand so I can hold it forever!',
@@ -50,7 +50,7 @@ async def yandere(ctx):
     response = random.choice(quotes)
     await ctx.send(response)
 
-@bot.command(name='8ball')
+@bot.command(name='8ball', help='Simulates a magic 8 ball')
 async def eightball(ctx):
     answers = [
         "It is certain.",
@@ -78,7 +78,7 @@ async def eightball(ctx):
     response = random.choice(answers)
     await ctx.send(response)
 
-@bot.command(name='shiningfinga')
+@bot.command(name='shiningfinga', category='G Gundam Quotes')
 async def shiningfinga(ctx):
     await ctx.send('俺のこの手が光って唸る！お前を倒せと輝き叫ぶ！必殺、**シャイニングフィンガー！**')
 
