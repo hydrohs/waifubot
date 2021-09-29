@@ -22,6 +22,7 @@ Various G Gundam quotes (Japanese and English):
 If you've ever lamented that senpai wont notice you, well, rest somewhat easier because waifubout will notice you!
 
 Triggers on messages containing (case in-sensitive):
-	when will senpai notice me
-	why wont senpai notice me
-	why won't senpai notice me
+````when will senpai notice me
+why wont senpai notice me
+why won't senpai notice me
+````
