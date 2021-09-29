@@ -2,6 +2,7 @@
 import os, random
 from discord import client
 from discord.ext import commands
+from discord.ext.commands.core import command
 
 from dotenv import load_dotenv
 
@@ -79,24 +80,23 @@ async def eightball(ctx):
     await ctx.send(response)
 
 class Gundam(commands.Cog, name='G Gundam Quotes'):
-
-    @bot.command(name='shiningfinga', category='G Gundam Quotes')
+    @commands.command(name='shiningfinga', category='G Gundam Quotes')
     async def shiningfinga(ctx):
         await ctx.send('俺のこの手が光って唸る！お前を倒せと輝き叫ぶ！必殺、**シャイニングフィンガー！**')
 
-    @bot.command(name='shiningfinger')
+    @commands.command(name='shiningfinger')
     async def shiningfinger(ctx):
         await ctx.send('This hand of mine glows with an awesome power. It’s burning grip tells me to defeat you! Now here I go, **Shining Finger!**')
 
-    @bot.command(name='godfinga')
+    @commands.command(name='godfinga')
     async def godfinger(ctx):
         await ctx.send('俺のこの手が真っ赤に燃える！！勝利を掴めて轟叫ぶ！！**爆熱ゴッドフィンガー！！！**')
 
-    @bot.command(name='burningfinger')
+    @commands.command(name='burningfinger')
     async def burningfinger(ctx):
         await ctx.send('This hand of mine is burning red! Its loud roar tells me to grasp victory! **Erupting Burning Finger!!!**')
 
-    @bot.command(name='burn')
+    @commands.command(name='burn')
     async def burn(ctx):
         await ctx.send('Hah! You better have a Burn Heal!')
 
