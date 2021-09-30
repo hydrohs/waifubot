@@ -1,5 +1,5 @@
 # Discord Waifubot v3.1.0
-import os, deredere, misc, quote, robot, waifu
+import os
 from discord.ext import commands
 
 from dotenv import load_dotenv
@@ -7,6 +7,14 @@ from dotenv import load_dotenv
 load_dotenv()
 #TOKEN = os.getenv('DISCORD_TOKEN')
 TOKEN = os.getenv('TEST_DISCORD_TOKEN')
+
+initial_extensions = [
+    'cogs.deredere',
+    'cogs.misc',
+    'cogs.quote',
+    'cogs.robot',
+    #'cogs.waifu'
+    ]
 
 bot = commands.Bot(command_prefix='!')
 
@@ -31,13 +39,8 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-try:
-    bot.add_cog(deredere.deredere(bot))
-    bot.add_cog(misc.misc(bot))
-    bot.add_cog(quote.ggundam(bot))
-    bot.add_cog(quote.pokemon(bot))
-    bot.add_cog(robot.robot(bot))
-    bot.add_cog(waifu.waifu(bot))
-    bot.run(TOKEN)
-except KeyboardInterrupt:
-    bot.close()
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        bot.load_extension(extension)
+
+bot.run(TOKEN)
